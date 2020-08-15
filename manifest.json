@@ -1,0 +1,41 @@
+{
+  "name": "Ad Blocker 2020",
+  "version": "1.0",
+  "description": "Bowse smart without any interruptions.",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "background",
+    "activeTab",
+    "webNavigation",
+    "*://*/*",
+    "https://ajax.googleapis.com/",
+    "contextMenus", 
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "declarativeContent"],
+    "background": {
+      "scripts": ["Assets/plugins/jquery/jquery-3.5.0.min.js", "background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["Assets/plugins/jquery/jquery-3.5.0.min.js",  "background.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "browser_action": {
+      "default_icon": "images/ad-blocker.png",
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "images/ad-blocker_16.png",
+      "48": "images/ad-blocker_48.png",
+      "128": "images/ad-blocker_128.png"
+    },
+    "options_page": "options.html",
+    "manifest_version": 2
+  }
+  
